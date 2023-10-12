@@ -4,38 +4,41 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    font-family: Arial;
+    font-family: Courier;
+    color: #FFF6E0;
 }
 
 header {
-    width: auto;
-    height: 90px;
-    background-color: #113946;
+    width: 100%;
+    background-color: #272829;
     display: flex;
+    flex-direction: column;
+    gap: 0px;
 
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 header > p {
-    color: #EAD7BB;
     font-size: 32px;
     font-weight: 600;
+    margin: 16px;
 }
 
 #menu-buttons {
+    width: 100%;
     display: flex;
-    gap: 32px;
 }
 
 #menu-buttons > a > button {
+    width: 100%;
     padding: 10px 20px;
-    background-color: #BCA37F;
-    border-radius: 12px;
-    color: black;
+    background-color: #272829;
+    color: #FFF6E0;
 }
 
 #menu-buttons > a {
+    flex: 1;
     text-decoration: none;
     font-weight: 600;
 }
@@ -43,7 +46,7 @@ header > p {
 main {
     width: auto;
     height: auto;
-    background-color: #FFF2D8;
+    background-color: #D8D9DA;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,21 +54,50 @@ main {
 
 section {
     margin: 0;
-    background-color: #EAD7BB;
+    background-color: #61677A;
     padding: 30px;
-    width: 60%;
+    width: 70%;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.list {
+    grid-column: 2;
+}
+
+.list > h3 {
+    text-align: center;
+}
+
+.preparation {
+    grid-column: 1 / span 2;
+}
+
+.preparation > h3 {
+    text-align: center;
+}
+
+.preparation > p {
+    text-align: center;
+}
+
+article > h2 {
+    text-align: center;
+    grid-column: 1 / span 2;
 }
 
 footer {
     width: auto;
     height: auto;
     font-size: 12px;
-    background-color: #113946;
-    text-align: center;
-    color: white;
+    background-color: #272829;
+    color: #FFF6E0;
 }
 
-header,
 footer {
     padding: 0 30px;
 }
@@ -84,27 +116,29 @@ h3 {
 }
 
 img {
-    width: 400px;
+    width: 100%;
     height: auto;
 }
 
 @media only screen and (max-width: 900px) {
     section {
-        width: 80%;
-        padding: 10px;
+        width: auto;
+        /* padding: 10px; */
     }
 
-    #menu-buttons {
+    article {
         display: flex;
-        gap: 16px;
+        flex-direction: column;
+    }
+    
+    .preparation > h3 {
+        text-align: center;
+    }
+    
+    article > h2 {
+        text-align: center;
     }
 
-    #menu-buttons > button {
-        padding: 5px 10px;
-        background-color: #BCA37F;
-    }
-
-    header,
     footer {
         padding: 0 15px;
     }
